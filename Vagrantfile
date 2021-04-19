@@ -13,6 +13,8 @@ Vagrant.configure("2") do |config|
     cfg.vm.box = "generic/ubuntu2004"
     cfg.vm.hostname = "master01"
     cfg.vm.provision :shell, path: "bootstrap.sh"
+    cfg.vm.network :private_network, :ip => "192.168.121.21"
+
     cfg.vm.provider "libvirt" do |lv, override|
       lv.graphics_type = "vnc"
       lv.video_type = "vga"
@@ -30,6 +32,8 @@ Vagrant.configure("2") do |config|
     cfg.vm.box = "generic/ubuntu2004"
     cfg.vm.hostname = "worker01"
     cfg.vm.provision :shell, path: "bootstrap.sh"
+    cfg.vm.network :private_network, :ip => "192.168.121.22"
+
     cfg.vm.provider "libvirt" do |lv, override|
       lv.graphics_type = "vnc"
       lv.video_type = "vga"
@@ -46,6 +50,8 @@ Vagrant.configure("2") do |config|
     cfg.vm.box = "generic/ubuntu2004"
     cfg.vm.hostname = "worker02"
     cfg.vm.provision :shell, path: "bootstrap.sh"
+    cfg.vm.network :private_network, :ip => "192.168.121.23"
+
     cfg.vm.provider "libvirt" do |lv, override|
       lv.graphics_type = "vnc"
       lv.video_type = "vga"
